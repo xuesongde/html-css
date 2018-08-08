@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--width=device-width ：表示宽度是设备屏幕的宽度
+    initial-scale=1.0：表示初始的缩放比例
+    minimum-scale=0.5：表示最小的缩放比例
+    maximum-scale=2.0：表示最大的缩放比例
+    user-scalable=yes：表示用户是否可以调整缩放比例-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--删除默认的苹果工具栏和菜单栏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- 作用是控制状态栏显示样式-->
+    <meta name="format-detection" content="telephone=no">
+    <!--Safari在iPhone上自动识别任何可能是电话号码的字符串-->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <title>hangge.com</title>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+      html, body, div, span, button {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+ 
+      body {
+        background-color: #789BC9;
+      }
+      @media screen and (max-width: 768px) {
+          page {
+              width: 100vw;
+          }
+      }
+      @media screen and (min-width: 769px) {
+          page {
+              width: 54vw;
+          }
+      }
+      page {
+        display: block;
+        height: 98vh;
+        margin: 1vh auto;
+        padding: 12vh 12vw 12vh 12vw;
+        border: 1px solid #646464;
+        box-shadow: 0 0 15px rgba(0,0,0,.75);
+        box-sizing: border-box;
+        background-color: white;
+        position: relative;
+      }
+ 
+      page:after {
+        content: attr(data-page);
+        color: graytext;
+        font-size: 12px;
+        text-align: center;
+        bottom: 4vh;
+        position: absolute;
+        left: 10vh;
+        right: 10vh;
+      }
+ 
+      a {
+        color: #34538b;
+        font-size: 14px;
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var lenPage = $("page").length;
+        //自动添加每页底部的页码
+        $("page").each(function(i){
+          $(this).attr("data-page", "第 "+ (i+1) +" 页，共 "+ lenPage +" 页");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <page><a href="http://www.hangge.com/blog/cache/detail_2105.html">欢迎访问 hangge.com</a></page>
+    <page></page>
+    <page></page>
+  </body>
+</html>
