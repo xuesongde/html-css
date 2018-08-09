@@ -15,8 +15,9 @@
     <meta name="format-detection" content="telephone=no">
     <!--Safari在iPhone上自动识别任何可能是电话号码的字符串-->
     <meta http-equiv="x-dns-prefetch-control" content="on">
-    <title>hangge.com</title>
+    <title>脚步</title>
     <script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/util.js"></script>
     <style>
       html, body, div, span, button {
         margin: 0;
@@ -48,7 +49,10 @@
         background-color: white;
         position: relative;
       }
- 
+      page a{
+        display: block;
+        margin: 5px;
+      }
       page:after {
         content: attr(data-page);
         color: graytext;
@@ -66,13 +70,26 @@
       }
     </style>
     <script type="text/javascript">
-      $(document).ready(function(){
-        var lenPage = $("page").length;
-        //自动添加每页底部的页码
-        $("page").each(function(i){
-          $(this).attr("data-page", "第 "+ (i+1) +" 页，共 "+ lenPage +" 页");
-        });
-      });
+      var util=new Util(),xhr=util.getXmlHttpRequest(),data;
+      xhr.open('GET','https://easy-mock.com/mock/599fe56cbd4203191f535ed9/xsd/data/imageList',true)
+      xhr.onreadystatechange=function(){
+        console.log('onreadystatechange....')
+        //数据接收完成
+        if(xhr.readyState==4){
+          if(xhr.status==200){
+            data=JSON.parse(xhr.responseText)
+            var lenPage = $("page").length;
+            //自动添加每页底部的页码
+            $("page").each(function(i){
+              if(i<3){
+                $($('page')[i+1]).html(data[i].introduction)
+              }
+              $(this).attr("data-page", "第 "+ (i+1) +" 页，共 "+ lenPage +" 页");
+            });
+          }
+        }
+      }
+      xhr.send()
     </script>
     <script>
      /**
@@ -82,7 +99,11 @@
     </script>
   </head>
   <body>
-    <page><a href="http://www.hangge.com/blog/cache/detail_2105.html">webpack打包优化</a></page>
+    <page>
+      <a href="http://www.hangge.com/blog/cache/detail_2105.html">webpack打包优化</a>
+      <a href="https://easy-mock.com/">mock数据模拟</a>
+    </page>
+    <page></page>
     <page></page>
     <page></page>
   </body>
