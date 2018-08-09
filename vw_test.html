@@ -42,7 +42,7 @@
         display: block;
         height: 98vh;
         margin: 1vh auto;
-        padding: 12vh 12vw 12vh 12vw;
+        padding: 8vw;
         border: 1px solid #646464;
         box-shadow: 0 0 15px rgba(0,0,0,.75);
         box-sizing: border-box;
@@ -67,13 +67,18 @@
       a {
         color: #34538b;
         font-size: 14px;
+        text-decoration: none;
+        cursor: pointer;
       }
     </style>
     <script type="text/javascript">
       var util=new Util(),xhr=util.getXmlHttpRequest(),data;
+      console.log('open之前...'+xhr.readyState)
       xhr.open('GET','https://easy-mock.com/mock/599fe56cbd4203191f535ed9/xsd/data/imageList',true)
+      console.log('open之后...'+xhr.readyState)
       xhr.onreadystatechange=function(){
         console.log('onreadystatechange....')
+        console.log(xhr.readyState)//打印 2 3 4 分别调用send() 接收部分response 完全接收response
         //数据接收完成
         if(xhr.readyState==4){
           if(xhr.status==200){
@@ -100,8 +105,8 @@
   </head>
   <body>
     <page>
-      <a href="http://www.hangge.com/blog/cache/detail_2105.html">webpack打包优化</a>
-      <a href="https://easy-mock.com/">mock数据模拟</a>
+      <a target="_blank" href="http://www.hangge.com/blog/cache/detail_2105.html">webpack打包优化</a>
+      <a target="_blank" href="https://easy-mock.com/">mock数据模拟</a>
     </page>
     <page></page>
     <page></page>
