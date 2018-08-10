@@ -5,7 +5,7 @@ function Util(){
 		if(window.XMLHttpRequest){
 			xhr=new window.XMLHttpRequest();
 		}
-		//IE浏览器创建XmlHttpRequest对象
+		//IE浏览器创建ActiveXObject对象
 		if(window.ActiveXObject){
 			try{
 				xhr = new ActiveXObject("Microsoft.XMLHTTP");
