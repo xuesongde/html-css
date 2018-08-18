@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>背景测试</title>
+</head>
+<style type="text/css">
+
+  body{
+    padding: 0;
+    margin: 0;
+    --bgColor:#f60;
+    background-color: var(--bgColor)
+  }
+  .bg{
+    height: 640px;
+    background: var(--bgColor);
+    width: 100%;
+  }
+  .bg1{
+    background-color: black;
+  }
+  .bg a{
+    color: #fff;
+  }
+</style>
+<body>
+  <div class="bg bg1">
+    <a onclick="changeCss(this)"">点我changeCss</a>
+  </div>
+</body>
+<script type="text/javascript">
+  //css变量支持性
+  const isSupported =
+  window.CSS &&
+  window.CSS.supports &&
+  window.CSS.supports('--a', 0);
+  console.log(isSupported)
+  function changeCss(e){
+    let css=e.parentNode.className,ele=e.parentNode;
+    let o=new operateCss(ele)
+    if(o.hasClass('bg1')){
+      o.removeClass('bg1')
+    }else{
+      o.addClass('bg1')
+    }
+  }
+  function operateCss(ele){
+    this.ele=ele;
+    this.css=ele.className;
+    //判断是否含有某个css
+    this.hasClass=function(css){
+      console.log(this.css.includes(css))
+      return this.css.includes(css)
+    }
+    this.addClass=function(css){
+      if(this.hasClass(css)){
+        return
+      }
+      css=' '+css
+      this.ele.className+=css
+    }
+    this.removeClass=function(css){
+      if(!this.hasClass(css)){
+        return
+      }
+     this.ele.className = this.ele.className.replace(css,'')
+    }
+  }
+</script>
+</html>
