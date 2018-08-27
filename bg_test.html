@@ -12,7 +12,7 @@
     background-color: var(--bgColor)
   }
   .bg{
-    height: 640px;
+    height: 40px;
     background: var(--bgColor);
     width: 100%;
   }
@@ -22,10 +22,19 @@
   .bg a{
     color: #fff;
   }
+  .test{
+    text-align: right;
+
+  }
 </style>
 <body>
   <div class="bg bg1">
     <a onclick="changeCss(this)"">点我changeCss</a>
+  </div>
+  <div class="test">
+    <div>
+      aaaa
+    </div>
   </div>
 </body>
 <script type="text/javascript">
@@ -44,6 +53,7 @@
       o.addClass('bg1')
     }
   }
+  //js operate css
   function operateCss(ele){
     this.ele=ele;
     this.css=ele.className;
@@ -66,5 +76,15 @@
      this.ele.className = this.ele.className.replace(css,'')
     }
   }
+    //jsonp安全性验证
+    for(var i=0;i<98;i++){
+      var g = document.createElement("script");
+      g.type = "text/javascript",
+      g.src = "https://m.jyall.com/cityjsonp.html";
+      document.getElementsByTagName("head")[0].appendChild(g);
+    }
+    window.callbackCity = function(e) {
+        console.log(e)
+    }
 </script>
 </html>
