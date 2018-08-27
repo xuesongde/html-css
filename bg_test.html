@@ -8,7 +8,7 @@
   body{
     padding: 0;
     margin: 0;
-    --bgColor:#f60;
+    --bgColor:#c0dcff;
     background-color: var(--bgColor)
   }
   .bg{
@@ -24,7 +24,37 @@
   }
   .test{
     text-align: right;
-
+    display: flex;
+    flex-direction: row;
+  }
+  .test .div_right{
+    width:200px;
+    margin-top: 20px;
+  }
+  .test .div_left{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .test .div_left img{
+    width: 283px;
+    height: 283px;
+    margin-top: 20px;
+  }
+  .test .div_right ul{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .test .div_right ul li{
+    list-style: none;
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .test .div_right ul li a{
+    text-decoration: none;
   }
 </style>
 <body>
@@ -32,8 +62,20 @@
     <a onclick="changeCss(this)"">点我changeCss</a>
   </div>
   <div class="test">
-    <div>
-      aaaa
+    <div class="div_right">
+      <ul>
+        <li><a href="">大红门</a><a href="">动物园</a></li>
+        <li><a href="">西单牌楼</a><a href="">王府井</a></li>
+        <li><a href="">住总万科</a><a href="">小龙河</a></li>
+        <li><a href="">永旺商城</a><a href="">安徽板面</a></li>
+        <li><a href="">刘家窑桥</a><a href="">西罗园南里</a></li>
+      </ul>
+    </div>
+    <div class="div_left">
+      <img src="https://z2.tuanimg.com/imagev2/zhaoshang/600x600.f96031925f20176eb3bf00d9715d88e3.380x380.jpg.webp">
+      <img src="https://z8.tuanimg.com/imagev2/zhaoshang/600x600.a78a040211070d1b0a2701f1cdfed63c.380x380.jpg.webp">
+      <img src="https://z8.tuanimg.com/imagev2/zhaoshang/707x707.464f2b6e5fdf81945b42677f7f645147.380x380.jpg.webp">
+      <img src="https://z2.tuanimg.com/imagev2/zhaoshang/600x600.edea7631e1c498f558c58c514d64d8e3.380x380.jpg.webp">
     </div>
   </div>
 </body>
