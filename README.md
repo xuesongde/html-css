@@ -98,3 +98,6 @@ lwychishi
 qQ123456
 家园网人力电话:57789188 张梦:15150991570 考勤
 新浪人力:010-52719373
+
+react drag beautiful : https://github.com/atlassian/react-beautiful-dnd 
+https://codesandbox.io/s/k260nyxq9v  example
