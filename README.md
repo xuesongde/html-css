@@ -6,15 +6,11 @@
 
 
 >https://easy-mock.com/    /**接口数据模拟**/
-
-
 /**
  *   csdn
      *** song_de ***
      *** xuesongde123456 ***
 */
-您的小米ID是：1467650803  密码：ASD3344525
-OPPO开放平台账号：xsd888 密码：asD334455
 读书快应用企业账号
 wangdou@vread.cn
 密码:Yuedu2018
@@ -101,3 +97,6 @@ qQ123456
 
 react drag beautiful : https://github.com/atlassian/react-beautiful-dnd 
 https://codesandbox.io/s/k260nyxq9v  example
+
+https://getbootstrap.com/docs/4.3/utilities/text/  document of bootstrap
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background  A Complete Guide to Flexbox
