@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no" />
     <!--Safari在iPhone上自动识别任何可能是电话号码的字符串-->
     <meta http-equiv="x-dns-prefetch-control" content="on" />
-    <title>clock</title>
+    <title>border shadow</title>
     <style>
       html,
       body,
@@ -28,63 +28,45 @@
         margin: 0;
         padding: 0;
         border: 0;
+        box-sizing: border-box;
       }
-
       body {
-        background-color: #789bc9;
         display: flex;
         justify-content: center;
+        background: blueviolet;
       }
-      .animation-clock {
-        animation: run-clock 60s linear 0s infinite normal backwards;
-        -webkit-animation: run-clock 60s linear 0s infinite normal backwards;
+      .container {
+        background-color: #999999;
+        width: 720px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
-      @keyframes run-clock {
-        form {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
+      .container img {
+        margin: 5px;
+        background-color: black;
+        border: 6px solid white;
+        box-shadow: 12px 6px 5px #333333;
       }
-      @keyframes run-clock {
-        form {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }
-      .clock-span {
-        height: 6px;
-        width: 6px;
-        background: #e2e2e2;
-        display: block;
+      .bottom-border {
         transform: rotate(45deg);
-        margin: 3px 0px 0px -2px;
-      }
-      .clock {
-        height: 100px;
-        margin-bottom: 100px;
-        width: 2px;
-        background-color: azure;
       }
     </style>
   </head>
   <body>
-    <div class="animation-clock">
-      <span class="clock-span"></span>
-      <div class="clock"></div>
+    <div class="container">
+      <div class="top-border">
+        <img
+          src="http://z2.tuanimg.com/imagev2/zhaoshang/600x600.e203a17b20e91e32c5796f7ff6797e72.380x380.jpg.webp"
+        />
+      </div>
+
+      <div>
+        <img
+          class="bottom-border"
+          src="http://z8.tuanimg.com/imagev2/zhaoshang/800x800.a70582fb75992a3e98e354be6492e751.380x380.jpg.webp"
+        />
+      </div>
     </div>
-    <script>
-      function Counter(num) {
-        let i = num;
-        return {
-          getNum: function() {
-            return i;
-          }
-        };
-      }
-    </script>
   </body>
 </html>
