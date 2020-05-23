@@ -78,12 +78,37 @@
     </div>
     <script>
       function Counter(num) {
-        let i = num;
+        let i = num
         return {
           getNum: function() {
-            return i;
+            return i
           }
-        };
+        }
+      }
+      for (let i = 0; i < 6; i++) {
+        setTimeout(function() {
+          console.log(i)
+        }, 1000 * i)
+      }
+      function sum(...args) {
+        const arry = Array.from(args)
+        return arry.reduce((cur, next) => cur + next)
+      }
+      class Parents {
+        constructor() {
+          this.fortune = 1000
+        }
+        giveMoney(num) {
+          return this.fortune - num
+        }
+      }
+      class Children extends Parents {
+        constructor(props) {
+          super(props)
+        }
+        getFortune() {
+          console.log(this)
+        }
       }
     </script>
   </body>
